@@ -1,0 +1,3 @@
+int solver(int input) {
+    return 0;
+}
