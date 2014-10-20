@@ -12,27 +12,27 @@ http://www.cprogramming.com/tutorial/makefiles.html
 # macros:													\
 http://www.tutorialspoint.com/makefile/makefile_macros.htm	\
 to use macro later: $(EXECUTABLE)
-EXECUTABLE=maze_solver # set compiler output
-CC=gcc # set compiler
+EXECUTABLE = maze_solver # set compiler output
+CC         = gcc # set compiler
 
 # set directory structure
-SOURCE_DIRECTORY=source
-OBJECT_DIRECTORY=source/objects
-SOLVER_DIRECTORY=solvers
+SOURCE_DIRECTORY = source
+OBJECT_DIRECTORY = source/objects
+SOLVER_DIRECTORY = solvers
 
 # set source files
-_SOURCE=maze.c helper_functions.c
-SOURCE=$(patsubst %,$(SOURCE_DIRECTORY)/%,$(_SOURCE)) # substitue string to get relative path e.g. "source/maze.c"
+_SOURCE = maze.c helper_functions.c
+SOURCE  = $(patsubst %,$(SOURCE_DIRECTORY)/%,$(_SOURCE)) # substitue string to get relative path e.g. "source/maze.c"
 
 # set object files
 # reasons to use object files: http://stackoverflow.com/questions/14636916/why-use-object-files-in-c
 # http://stackoverflow.com/questions/1814270/gcc-g-option-to-place-all-object-files-into-separate-directory
-_OBJECTS=maze.o helper_functions.o solver.o
-OBJECTS=$(patsubst %,$(OBJECT_DIRECTORY)/%,$(_OBJECTS)) # substitue string to get relative path e.g. "source/maze.o"
+_OBJECTS = maze.o helper_functions.o solver.o
+OBJECTS  = $(patsubst %,$(OBJECT_DIRECTORY)/%,$(_OBJECTS)) # substitue string to get relative path e.g. "source/maze.o"
 
 # set compiling options
-LIBRARIES=-lm
-CFLAGS=-I$(SOURCE_DIRECTORY)
+LIBRARIES = -lm
+CFLAGS    = -I$(SOURCE_DIRECTORY)
 
 # the following is essentiall doing:												\
 source/objects/maze.o: source/maze.c													\
