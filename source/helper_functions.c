@@ -10,6 +10,7 @@ void output_results(int steps_int) {
   snprintf(steps_string, MAX_FILENAME, "%d", steps_int);  
   char filename[SOLVER_LIMIT_DIGITS];
   strcat(filename, steps_string);
+  strcat(filename, ".result");
   
   FILE *results = fopen(filename, "w");
   copy_logs_to_results(results);
