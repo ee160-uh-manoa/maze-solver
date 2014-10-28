@@ -1,5 +1,3 @@
-#include "maze.h"
-
 char solver(char possible_moves[MAX_POSSIBLE_MOVES],
             int       int_array[ARRAY_MAX],
             char     char_array[ARRAY_MAX],
@@ -9,11 +7,4 @@ char solver(char possible_moves[MAX_POSSIBLE_MOVES],
             char     char_table[MAZE_WIDTH][MAZE_WIDTH],
             float   float_table[MAZE_WIDTH][MAZE_WIDTH],
             double double_table[MAZE_WIDTH][MAZE_WIDTH],
-            FILE *log_file) {
-            
-  char next_step = NORTH;
-            
-  fprintf(log_file, "deciding next step...\n");
-  
-  return next_step;
-}
+            FILE *log_file);
