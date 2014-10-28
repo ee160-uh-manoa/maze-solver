@@ -21,7 +21,7 @@ OBJECT_DIRECTORY = source/objects
 SOLVER_DIRECTORY = solvers
 
 # set source files
-_SOURCE = maze.c helper_functions.c
+_SOURCE = maze.c helper_functions.c solver.c
 SOURCE  = $(patsubst %,$(SOURCE_DIRECTORY)/%,$(_SOURCE)) # substitue string to get relative path e.g. "source/maze.c"
 
 # set object files
@@ -35,8 +35,8 @@ LIBRARIES = -lm
 CFLAGS    = -I$(SOURCE_DIRECTORY)
 
 # the following is essentiall doing:												\
-source/objects/maze.o: source/maze.c													\
-	gcc -c -o source/objects/maze.o source/maze.c -Isource								\
+source/objects/maze.o: source/maze.c												\
+	gcc -c -o source/objects/maze.o source/maze.c -Isource							\
 for each dependant object e.g. maze.o helper_functions.o							\
 http://stackoverflow.com/questions/1633527/wildcard-targets-in-a-makefile			\
 http://www.gnu.org/software/make/manual/make.html#Pattern-Rules
@@ -49,7 +49,7 @@ build_maze_solver: $(OBJECTS)
 	$(CC) -o $(EXECUTABLE) $^ $(CFLAGS) $(LIBS)
 
 copy_over_custom_solver:
-	cp $(SOLVER_DIRECTORY)/${USERNAME_ID}.solver $(SOURCE_DIRECTORY)/solver.c
+	cp $(SOLVER_DIRECTORY)/${SOLVER}.solver $(SOURCE_DIRECTORY)/solver.c
 
 .PHONY: clean # http://www.gnu.org/software/make/manual/make.html#Cleanup
 
