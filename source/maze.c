@@ -1,5 +1,9 @@
 #include "maze.h"
 
+void remove_extraneous(int *steps_pointer) {
+  (*steps_pointer)--; // to account for the extra increment after for loop completion
+}
+
 int main() {
   int       int_array[ARRAY_MAX];
   char     char_array[ARRAY_MAX];
@@ -15,10 +19,11 @@ int main() {
   FILE *log_file = fopen(DEBUG_FILENAME, "w");
   int steps;
   
-  initialize(maze);
+  initialize(maze); // TODO: starting position
+
   for(steps=1; steps <= SOLVER_LIMIT; ++steps) {
     fprintf(log_file, "step: %d\n", steps);
-    solver(possible_moves,
+    int next_step = solver(possible_moves,
            int_array,
            char_array,
            float_array,
@@ -29,7 +34,7 @@ int main() {
            double_table,
            log_file);
   }
-  steps = steps - 1; // Remove extra increment after for loop completion
+  remove_extraneous(&steps);
   
   fclose(log_file);
   output_results(steps);

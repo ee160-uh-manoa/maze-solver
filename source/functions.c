@@ -1,8 +1,24 @@
 #include "maze.h"
 
-int initialize(int maze[MAZE_HEIGHT][MAZE_WIDTH]) {
+void initialize(int maze[MAZE_HEIGHT][MAZE_WIDTH]) {
   printf("Initializing maze solver...\n");  
-  return 0;
+  read_in(maze);
+}
+
+void read_in(int maze[MAZE_HEIGHT][MAZE_WIDTH]) {
+  int row, column;
+  FILE *input_file_pointer = fopen("mazes/maze.input", "r");
+  
+  if (input_file_pointer != NULL) {
+    for (row=1; row<=MAZE_HEIGHT; row++) {
+      for (column=1; column<=MAZE_WIDTH; column++) {
+        fscanf(input_file_pointer, "%d", &maze[row+ARRAY_OFFSET][column+ARRAY_OFFSET]);
+      }
+    }
+    fclose(input_file_pointer);
+  } else {
+    printf("maze file failed to open\n");
+  }
 }
 
 void output_results(int steps_int) {
@@ -23,4 +39,5 @@ void copy_logs_to_results(FILE *results) {
   while (fgets(temp, sizeof temp, logs) != NULL) {
     fputs(temp, results);
   }
+  fclose(logs);
 }
