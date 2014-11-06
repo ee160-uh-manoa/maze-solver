@@ -21,13 +21,13 @@ OBJECT_DIRECTORY = source/objects
 SOLVER_DIRECTORY = solvers
 
 # set source files
-_SOURCE = maze.c helper_functions.c solver.c
+_SOURCE = maze.c functions.c solver.c
 SOURCE  = $(patsubst %,$(SOURCE_DIRECTORY)/%,$(_SOURCE)) # substitue string to get relative path e.g. "source/maze.c"
 
 # set object files
 # reasons to use object files: http://stackoverflow.com/questions/14636916/why-use-object-files-in-c
 # http://stackoverflow.com/questions/1814270/gcc-g-option-to-place-all-object-files-into-separate-directory
-_OBJECTS = maze.o helper_functions.o solver.o
+_OBJECTS = maze.o functions.o solver.o
 OBJECTS  = $(patsubst %,$(OBJECT_DIRECTORY)/%,$(_OBJECTS)) # substitue string to get relative path e.g. "source/maze.o"
 
 # set compiling options
