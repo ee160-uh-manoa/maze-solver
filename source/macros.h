@@ -10,6 +10,8 @@
 
 #define STARTING_X_POSITION 1
 #define STARTING_Y_POSITION 1
+#define VALID 'y'
+#define INVALID 'n'
 
 #define MAX_POSSIBLE_MOVES 4
 #define NO_MOVES          'x'
