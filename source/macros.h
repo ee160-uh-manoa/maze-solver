@@ -8,6 +8,9 @@
 #define ARRAY_MAX MAZE_HEIGHT*MAZE_WIDTH
 #define ARRAY_OFFSET -1
 
+#define STARTING_X_POSITION 1
+#define STARTING_Y_POSITION 1
+
 #define MAX_POSSIBLE_MOVES 4
 #define NO_MOVES          'x'
 #define NORTH             'n'
@@ -16,3 +19,9 @@
 #define SOUTH             's'
 
 #define MAX_FILENAME 100
+
+struct Coordinate {
+  int x;
+  int y;
+};
+  

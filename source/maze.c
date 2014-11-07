@@ -1,9 +1,5 @@
 #include "maze.h"
 
-void remove_extraneous(int *steps_pointer) {
-  (*steps_pointer)--; // to account for the extra increment after for loop completion
-}
-
 int main() {
   int       int_array[ARRAY_MAX];
   char     char_array[ARRAY_MAX];
@@ -15,13 +11,12 @@ int main() {
   double double_table[MAZE_HEIGHT][MAZE_WIDTH];
   
   char possible_moves[MAX_POSSIBLE_MOVES] = { NO_MOVES };  
-  int maze[MAZE_HEIGHT][MAZE_WIDTH];
+  int maze[MAZE_HEIGHT][MAZE_WIDTH]; read_in(maze);
+  struct Coordinate position = { .x = STARTING_X_POSITION, .y = STARTING_Y_POSITION };
   FILE *log_file = fopen(DEBUG_FILENAME, "w");
   int steps;
   
-  initialize(maze); // TODO: starting position
-
-  for(steps=1; steps <= SOLVER_LIMIT; ++steps) {
+  for(steps=1; steps <= SOLVER_LIMIT; steps++) {
     fprintf(log_file, "step: %d\n", steps);
     int next_step = solver(possible_moves,
            int_array,

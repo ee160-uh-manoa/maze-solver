@@ -1,10 +1,5 @@
 #include "maze.h"
 
-void initialize(int maze[MAZE_HEIGHT][MAZE_WIDTH]) {
-  printf("Initializing maze solver...\n");  
-  read_in(maze);
-}
-
 void read_in(int maze[MAZE_HEIGHT][MAZE_WIDTH]) {
   int row, column;
   FILE *input_file_pointer = fopen("mazes/maze.input", "r");
@@ -19,6 +14,10 @@ void read_in(int maze[MAZE_HEIGHT][MAZE_WIDTH]) {
   } else {
     printf("maze file failed to open\n");
   }
+}
+
+void remove_extraneous(int *steps_pointer) {
+  (*steps_pointer)--; // to account for the extra increment after for loop completion
 }
 
 void output_results(int steps_int) {
