@@ -1,4 +1,4 @@
-char solver(char possible_moves[MAX_POSSIBLE_MOVES],
+char solver(int possible_steps[MAX_POSSIBLE_STEPS],
             int       int_array[ARRAY_MAX],
             char     char_array[ARRAY_MAX],
             float   float_array[ARRAY_MAX],

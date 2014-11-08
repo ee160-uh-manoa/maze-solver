@@ -1,10 +1,6 @@
 #include "maze.h"
 
-void available_steps_at(struct Coordinate position, char possible_steps[MAX_POSSIBLE_MOVES]) {
-  printf("available_steps_at()");
-}
-
-char verify(char next_step, char possible_moves[MAX_POSSIBLE_MOVES]) {
+char verify(char next_step, int possible_steps[MAX_POSSIBLE_STEPS]) {
   printf("verify()");
   return VALID;
 }
@@ -24,24 +20,27 @@ int main() {
   double double_table[MAZE_HEIGHT][MAZE_WIDTH];
   
   int maze[MAZE_HEIGHT][MAZE_WIDTH]; read_in(maze);
-  struct Coordinate position = { .x = STARTING_X_POSITION, .y = STARTING_Y_POSITION };
+  struct Coordinate position = { .horizontal = STARTING_HORIZONTAL_POSITION, .vertical = STARTING_VERTICAL_POSITION }; // http://stackoverflow.com/questions/330793/how-to-initialize-a-struct-in-ansi-c
   FILE *log_file = fopen(DEBUG_FILENAME, "w");
   char step_validness = VALID;
   int steps;
   
   for(steps=1; (steps <= SOLVER_LIMIT) && (step_validness == VALID); steps++) {
     fprintf(log_file, "step: %d\n", steps);
-    char possible_steps[MAX_POSSIBLE_MOVES]; available_steps_at(position, possible_steps);
+    // I find passing arrays to functions and working directly on the array more intuitive and easier to read,
+    // but I want to highlight the fact that returning pointers from functions is also an option
+    // http://www.tutorialspoint.com/cprogramming/c_return_arrays_from_function.htm
+    int *possible_steps = available_steps_at(position, maze); // possible_steps points to an array of 4 elements (int possible_steps[4])
     char next_step = solver(possible_steps,
-           int_array,
-           char_array,
-           float_array,
-           double_array,
-           int_table,
-           char_table,
-           float_table,
-           double_table,
-           log_file);
+      int_array,
+      char_array,
+      float_array,
+      double_array,
+      int_table,
+      char_table,
+      float_table,
+      double_table,
+      log_file);
            
     step_validness = verify(next_step, possible_steps);
     if (step_validness == VALID) {
