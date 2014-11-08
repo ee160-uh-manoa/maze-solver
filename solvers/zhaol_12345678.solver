@@ -1,6 +1,8 @@
 #include "maze.h"
 
 char solver(int possible_steps[MAX_POSSIBLE_STEPS],
+    struct Coordinate position,
+    struct Coordinate destination,
     int       int_array[ARRAY_MAX],
     char     char_array[ARRAY_MAX],
     float   float_array[ARRAY_MAX],

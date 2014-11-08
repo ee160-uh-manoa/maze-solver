@@ -28,6 +28,8 @@ int main() {
     // http://www.tutorialspoint.com/cprogramming/c_return_arrays_from_function.htm
     int *possible_steps = available_steps_at(position, maze); // possible_steps points to an array of 4 elements (int possible_steps[4])
     int next_step = solver(possible_steps,
+      position,
+      destination,
       int_array,
       char_array,
       float_array,
