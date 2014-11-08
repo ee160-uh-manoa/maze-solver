@@ -118,6 +118,50 @@ void remove_extraneous(int *steps_pointer) {
   (*steps_pointer)--; // to account for the extra increment after for loop completion
 }
 
+char verify(int next_step, int possible_steps[MAX_POSSIBLE_STEPS]) {
+  int step_found = NOT_FOUND;
+  int counter;
+  for (counter=1; counter<=MAX_POSSIBLE_STEPS; counter++) {
+    if (possible_steps[counter+ARRAY_OFFSET] == next_step) {
+      step_found = FOUND;
+    }
+  }
+  return step_found;
+}
+
+void perform(int next_step, struct Coordinate *position) {
+  switch (next_step) {
+    case NORTH:
+      (*position).vertical--;
+      break;
+    case EAST:
+      (*position).horizontal++;
+      break;
+    case WEST:
+      (*position).horizontal--;
+      break;
+    case SOUTH:
+      (*position).vertical++;
+      break;
+  }
+}
+
+char check(struct Coordinate *position, struct Coordinate *destination) {
+  char destination_reached = NOT_REACHED;
+  if (((*position).horizontal == (*destination).horizontal) &&
+    ((*position).horizontal == (*destination).horizontal)) {
+    destination_reached = REACHED;    
+  }
+  return destination_reached;
+}
+
+
+
+
+
+
+
+
 void output_results(int steps_int) {
   char steps_string[SOLVER_LIMIT_DIGITS];
   snprintf(steps_string, MAX_FILENAME, "%d", steps_int);  

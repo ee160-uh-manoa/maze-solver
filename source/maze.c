@@ -1,42 +1,5 @@
 #include "maze.h"
 
-char check(struct Coordinate *position, struct Coordinate *destination) {
-  char destination_reached = NOT_REACHED;
-  if (((*position).horizontal == (*destination).horizontal) &&
-    ((*position).horizontal == (*destination).horizontal)) {
-    destination_reached = REACHED;    
-  }
-  return destination_reached;
-}
-
-char verify(int next_step, int possible_steps[MAX_POSSIBLE_STEPS]) {
-  int step_found = NOT_FOUND;
-  int counter;
-  for (counter=1; counter<=MAX_POSSIBLE_STEPS; counter++) {
-    if (possible_steps[counter+ARRAY_OFFSET] == next_step) {
-      step_found = FOUND;
-    }
-  }
-  return step_found;
-}
-
-void perform(int next_step, struct Coordinate *position) {
-  switch (next_step) {
-    case NORTH:
-      (*position).vertical--;
-      break;
-    case EAST:
-      (*position).horizontal++;
-      break;
-    case WEST:
-      (*position).horizontal--;
-      break;
-    case SOUTH:
-      (*position).vertical++;
-      break;
-  }
-}
-
 int main() {
   int       int_array[ARRAY_MAX];
   char     char_array[ARRAY_MAX];
