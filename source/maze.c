@@ -22,7 +22,7 @@ int main() {
     (step_validness == VALID) &&
     (destination_reached != REACHED); steps++) {
     fprintf(log_file, "step: %d\n", steps);
-    printf("position.horizontal: %d, position.vertical: %d\n", position.horizontal, position.vertical);
+    fprintf(log_file, "position.horizontal: %d, position.vertical: %d\n", position.horizontal, position.vertical);
     // I find passing arrays to functions and working directly on the array more intuitive and easier to read,
     // but I want to highlight the fact that returning pointers from functions is also an option
     // http://www.tutorialspoint.com/cprogramming/c_return_arrays_from_function.htm
