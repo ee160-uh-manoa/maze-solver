@@ -40,11 +40,9 @@ int main() {
            
     step_validness = verify(next_step, possible_steps);
     if (step_validness == VALID) {
-      printf("VALID\n");
       perform(next_step, &position);
       destination_reached = check(&position, &destination);
     } else {
-      printf("NOT VALID\n");
     }
   }
   remove_extraneous(&steps);

@@ -17,11 +17,9 @@ char solver(int possible_steps[MAX_POSSIBLE_STEPS],
   
   switch (int_array[0]) {
     case 1:
-      printf("step: %d\n", int_array[0]);
       next_step = EAST;
       break;
     case 2:
-      printf("step: %d\n", int_array[0]);
       next_step = SOUTH;
       break;
     case 3:
@@ -100,7 +98,6 @@ char solver(int possible_steps[MAX_POSSIBLE_STEPS],
       next_step = EAST;
       break;
     case 28:
-      printf("step: %d\n", int_array[0]);
       next_step = EAST;
       break;
   }
