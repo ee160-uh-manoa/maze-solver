@@ -26,6 +26,7 @@ struct Coordinate {
 #define NOT_FOUND INVALID
 #define REACHED 'y'
 #define NOT_REACHED 'n'
+#define CRASHED_INTO_WALL -1
 
 #define MAX_POSSIBLE_STEPS 4
 #define XOOO 1000 //1000

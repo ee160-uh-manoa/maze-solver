@@ -44,10 +44,13 @@ int main() {
     if (step_validness == VALID) {
       perform(next_step, &position);
       destination_reached = check(&position, &destination);
-    } else {
     }
   }
-  remove_extraneous(&steps);
+  if (step_validness == VALID) {
+    remove_extraneous(&steps);
+  } else {
+    steps = CRASHED_INTO_WALL;
+  }
   
   fclose(log_file);
   output_results(steps);
