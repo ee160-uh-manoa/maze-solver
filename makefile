@@ -53,7 +53,9 @@ copy_over_custom_solver:
 
 .PHONY: clean # http://www.gnu.org/software/make/manual/make.html#Cleanup
 
-clean: remove_custom_solver
+clean: remove_objects remove_custom_solver
+
+remove_objects:
 	rm -f $(OBJECT_DIRECTORY)/*.o
 	
 remove_custom_solver:
