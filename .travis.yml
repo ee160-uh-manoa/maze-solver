@@ -8,8 +8,8 @@ after_script:
 - git config --global user.email "travis@example.com"
 - git config --global user.name "travis"
 - git add . -A
-- git commit -m 'updating with new scores'
+- git commit -m '[TRAVIS] updating with new scores'
 - git branch temp
 - git checkout master
-- git merge temp --no-ff -m 'merging new scores into master'
+- git merge temp --no-ff -m '[TRAVIS] merging new scores into master'
 - git push -q --repo https://$USERNAME:$PASSWORD@github.com/ee160-uh-manoa/maze-solver.git
