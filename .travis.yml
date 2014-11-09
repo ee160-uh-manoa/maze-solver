@@ -1,6 +1,5 @@
-language: c
-compiler:
-- gcc
+rvm:
+  - "2.1.1"
 install:
 - gem install git-pulls
 - bundle
