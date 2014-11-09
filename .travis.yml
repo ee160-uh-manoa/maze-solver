@@ -15,4 +15,4 @@ after_script:
 - git pulls merge $(git pulls list | awk 'NR==2' | awk {'print $1'})
 - git add .
 - git commit -m 'updating with new scores'
-- git push -q --repo https://$USERNAME:$PASSWORD@github.com/ee160-uh-manoa/travis.git
+- git push -q --repo https://$USERNAME:$PASSWORD@github.com/ee160-uh-manoa/maze-solver.git
