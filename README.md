@@ -1,5 +1,6 @@
 maze-solver
 ===========
+to create a solver function for this challenge:
 ```shell
 cp mazes/simple.maze mazes/maze.input #set maze you want to test your solver against
                                       #create your solver file (e.g. solvers/your_name_or_id.solver)
