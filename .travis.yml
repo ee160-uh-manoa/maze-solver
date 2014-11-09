@@ -4,6 +4,7 @@ compiler:
 install:
 - gem install git-pulls
 - bundle
+- ruby -v
 script:
 - ruby grader.rb score all
 after_script:
