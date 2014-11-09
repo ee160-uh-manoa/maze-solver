@@ -1,7 +1,6 @@
 rvm:
   - "2.1.1"
 install:
-- gem install git-pulls
 - bundle
 - ruby -v
 script:
@@ -11,13 +10,7 @@ after_script:
 - git config --global user.name "travis"
 - git branch
 - git log --decorate --all --oneline --graph
-- git checkout master
-- git pulls update
-- git pulls list
-- git pulls merge $(git pulls list | awk 'NR==2' | awk {'print $1'})
-- git branch
-- git log --decorate --all --oneline --graph
-- git add .
+- git add . -u
 - git commit -m 'updating with new scores'
 - git branch
 - git log --decorate --all --oneline --graph
