@@ -1,21 +1,15 @@
 rvm:
   - "2.1.1"
 install:
-- gem install git-pulls
 - bundle
-- ruby -v
 script:
 - ruby grader.rb score all
 after_script:
 - git config --global user.email "travis@example.com"
 - git config --global user.name "travis"
-- git branch
-- git log --decorate --all --oneline --graph
 - git add . -A
 - git commit -m 'updating with new scores'
 - git branch temp
 - git checkout master
 - git merge temp --no-ff -m 'merging new scores into master'
-- git branch
-- git log --decorate --all --oneline --graph
 - git push -q --repo https://$USERNAME:$PASSWORD@github.com/ee160-uh-manoa/maze-solver.git
