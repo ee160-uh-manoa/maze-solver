@@ -3,6 +3,7 @@ compiler:
 - gcc
 install:
 - gem install git-pulls
+- bundle
 script:
 - ruby grader.rb score all
 after_script:
