@@ -19,7 +19,7 @@ char solver(int possible_steps[MAX_POSSIBLE_STEPS],
   
   switch (int_array[0]) {
     case 1:
-      next_step = NORTH;
+      next_step = EAST;
       break;
     case 2:
       next_step = SOUTH;
