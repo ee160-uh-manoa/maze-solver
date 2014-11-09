@@ -9,6 +9,8 @@ script:
 after_script:
 - git config --global user.email "travis@example.com"
 - git config --global user.name "travis"
+- git branch
+- git log --decorate --all --oneline --graph
 - git checkout master
 - git pulls update
 - git pulls list
