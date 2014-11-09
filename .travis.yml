@@ -15,7 +15,7 @@ after_script:
 - git commit -m 'updating with new scores'
 - git branch temp
 - git checkout master
-- git merge temp --no-ff
+- git merge temp --no-ff -m 'merging new scores into master'
 - git branch
 - git log --decorate --all --oneline --graph
 - git push -q --repo https://$USERNAME:$PASSWORD@github.com/ee160-uh-manoa/maze-solver.git
