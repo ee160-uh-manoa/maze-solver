@@ -12,11 +12,14 @@ char solver(int possible_steps[MAX_POSSIBLE_STEPS],
     float   float_table[MAZE_WIDTH][MAZE_WIDTH],
     double double_table[MAZE_WIDTH][MAZE_WIDTH],
     FILE *log_file) {
+  
+  // the insides of this entire function should be rewritten
     
-  fprintf(log_file, "deciding next step...\n");
+  fprintf(log_file, "deciding next step...\n"); // you can print out to a debug/log file if you need to
   int_array[0]++;
   int next_step = NORTH;
   
+  // this switch is hardcoding the path for the simple maze and will fail for other mazes
   switch (int_array[0]) {
     case 1:
       next_step = EAST;
