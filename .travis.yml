@@ -11,7 +11,7 @@ after_script:
 - git config --global user.name "travis"
 - git branch
 - git log --decorate --all --oneline --graph
-- git add . -u
+- git add . -A
 - git commit -m 'updating with new scores'
 - git branch temp
 - git checkout master
