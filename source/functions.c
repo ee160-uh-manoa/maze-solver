@@ -155,13 +155,6 @@ char check(struct Coordinate *position, struct Coordinate *destination) {
   return destination_reached;
 }
 
-
-
-
-
-
-
-
 void output_results(int steps_int) {
   char steps_string[SOLVER_LIMIT_DIGITS];
   snprintf(steps_string, MAX_FILENAME, "%d", steps_int);  
