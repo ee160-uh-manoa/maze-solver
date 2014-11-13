@@ -7,10 +7,10 @@ char solver(int possible_steps[MAX_POSSIBLE_STEPS],
     char     char_array[ARRAY_MAX],
     float   float_array[ARRAY_MAX],
     double double_array[ARRAY_MAX],
-    int       int_table[MAZE_HEIGHT][MAZE_WIDTH],
-    char     char_table[MAZE_HEIGHT][MAZE_WIDTH],
-    float   float_table[MAZE_HEIGHT][MAZE_WIDTH],
-    double double_table[MAZE_HEIGHT][MAZE_WIDTH],
+    int       int_table[MAZE_WIDT][MAZE_WIDTH],
+    char     char_table[MAZE_WIDTH][MAZE_WIDTH],
+    float   float_table[MAZE_WIDTH][MAZE_WIDTH],
+    double double_table[MAZE_WIDTH][MAZE_WIDTH],
     FILE *log_file) {
   
   // the insides of this entire function should be rewritten
