@@ -13,5 +13,5 @@ make SOLVER="zhaol_12345678"          #build the program with your solver
 
 example command to use during development:
 ```shell
-rm maze_solver;rm *.result;make clean;make SOLVER="zhaol_12345678"; ./maze_solver 
+rm maze_solver;rm -- *.result;make clean;make SOLVER="zhaol_12345678"; ./maze_solver 
 ```
