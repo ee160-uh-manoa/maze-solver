@@ -22,7 +22,9 @@ int *available_steps_at(struct Coordinate position, int maze[MAZE_HEIGHT][MAZE_W
 }
 
 int *decode(int possible_steps_code) {
-  static int possible_steps[MAX_POSSIBLE_STEPS] = { NO_MOVES, NO_MOVES, NO_MOVES, NO_MOVES };
+  static int possible_steps[MAX_POSSIBLE_STEPS];
+  reset(possible_steps);
+  
   if (it_is_possible_to_go(NORTH, possible_steps_code)) {
     add_to_possible_steps(NORTH, possible_steps);
   }
@@ -36,6 +38,13 @@ int *decode(int possible_steps_code) {
     add_to_possible_steps(SOUTH, possible_steps);
   }
   return possible_steps;
+}
+
+void reset(int possible_steps[MAX_POSSIBLE_STEPS]) {
+  int counter;
+  for (counter=1; counter<=4; counter++) {
+    possible_steps[counter+ARRAY_OFFSET] = NO_MOVES;
+  }
 }
 
 int it_is_possible_to_go(int direction, int possible_steps_code) {
