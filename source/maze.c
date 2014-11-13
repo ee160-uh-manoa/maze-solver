@@ -47,6 +47,7 @@ int main() {
     }
   }
   if (step_validness == VALID) {
+    fprintf(log_file, "Maze solved!");
     remove_extraneous(&steps);
   } else {
     steps = CRASHED_INTO_WALL;
