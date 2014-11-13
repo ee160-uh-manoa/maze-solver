@@ -2,3 +2,5 @@
 maze_solver
 maze.input
 /*.result
+*.o
+source/solver.c
