@@ -1,8 +1,11 @@
 #include "maze.h"
 
-void read_in(int maze[MAZE_HEIGHT][MAZE_WIDTH]) {
+void read_in(int maze[MAZE_HEIGHT][MAZE_WIDTH], char maze_name[]) {
+  char maze_filename[MAX_FILENAME] = "mazes/";
   int row, column;
-  FILE *input_file_pointer = fopen("mazes/maze.input", "r");
+  strcat(maze_filename, maze_name);
+  strcat(maze_filename, ".maze");
+  FILE *input_file_pointer = fopen(maze_filename, "r");
   
   if (input_file_pointer != NULL) {
     for (row=1; row<=MAZE_HEIGHT; row++) {

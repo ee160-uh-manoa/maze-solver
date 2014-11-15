@@ -1,6 +1,6 @@
 #include "maze.h"
 
-int main() {
+int main(int argument_count, char *argument_vector[]) { // http://www.astro.umd.edu/~dcr/Courses/ASTR615/intro_C/node11.html
   int       int_array[ARRAY_MAX];
   char     char_array[ARRAY_MAX];
   float   float_array[ARRAY_MAX];
@@ -10,7 +10,7 @@ int main() {
   float   float_table[MAZE_HEIGHT][MAZE_WIDTH];
   double double_table[MAZE_HEIGHT][MAZE_WIDTH];
   
-  int maze[MAZE_HEIGHT][MAZE_WIDTH]; read_in(maze);
+  int maze[MAZE_HEIGHT][MAZE_WIDTH]; read_in(maze, argument_vector[1]);
   struct Coordinate position    = { .horizontal = STARTING_HORIZONTAL_POSITION, .vertical = STARTING_VERTICAL_POSITION }; // http://stackoverflow.com/questions/330793/how-to-initialize-a-struct-in-ansi-c
   struct Coordinate destination = { .horizontal = ENDING_HORIZONTAL_POSITION, .vertical = ENDING_VERTICAL_POSITION };
   FILE *log_file = fopen(DEBUG_FILENAME, "w");

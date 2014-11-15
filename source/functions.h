@@ -1,4 +1,4 @@
-void read_in(int maze[MAZE_HEIGHT][MAZE_WIDTH]);
+void read_in(int maze[MAZE_HEIGHT][MAZE_WIDTH], char maze_filename[]);
 
 int *available_steps_at(struct Coordinate position, int maze[MAZE_HEIGHT][MAZE_WIDTH]);
 int *decode(int possible_steps_code);
