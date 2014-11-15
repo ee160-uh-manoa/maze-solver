@@ -1,8 +1,7 @@
 class Grader::Runner
   class << self
-    attr_reader :input_maze, :executable, :results_folder
+    attr_reader :executable, :results_folder
   end
-  @input_maze     = 'mazes/maze.input'
   @executable     = 'maze_solver'
   @results_folder = 'results'
   
@@ -27,13 +26,12 @@ class Grader::Runner
   end
 
   def prepare
-    `make clean;`
-    `cp #{Shellwords.escape(maze_file)} #{self.class.input_maze}`
-    `make SOLVER="#{Shellwords.escape(solver)}"`
+    `make clean`
+    `make SOLVER=#{Shellwords.escape(solver)}`
   end
   
   def run
-    `./#{self.class.executable}`
+    `./#{self.class.executable} #{maze}`
   end
   
   def record_results
@@ -62,7 +60,6 @@ class Grader::Runner
   end
   
   def clean_up
-    `rm #{self.class.input_maze}`
     `rm -- *.result`
     `rm #{self.class.executable}`
   end
