@@ -16,8 +16,23 @@ char solver(int possible_steps[MAX_POSSIBLE_STEPS],
   // the insides of this entire function should be rewritten
     
   fprintf(log_file, "deciding next step...\n"); // you can print out to a debug/log file if you need to
-  int_array[0]++;
-  int next_step = NORTH;
+  
+  int_array[0]++; // none of the arrays and tables are altered by the main program; so feel free to use it as you wish
+  
+  int next_step = NORTH; //you can specify the next step using these macros: https://github.com/ee160-uh-manoa/maze-solver/blob/master/source/macros.h#L36-42
+  
+  // your solver can analyze the possible_steps array to decide where the next_step should be, like the following:
+  if (possible_steps[NORTH] == NORTH) {
+    // next_step can be NORTH
+  } else if (possible_steps[EAST] == EAST) {
+    // next_step can be EAST
+  } else if (possible_steps[WEST] == WEST) {
+    // next_step can be WEST
+  } else if (possible_steps[SOUTH] == SOUTH) {
+    // next_step can be SOUTH
+  } else {
+    // an error has occurred and possible_steps array only contains NO_MOVES
+  }
   
   // this switch is hardcoding the path for the simple maze and will fail for other mazes
   switch (int_array[0]) {
@@ -106,5 +121,6 @@ char solver(int possible_steps[MAX_POSSIBLE_STEPS],
       next_step = EAST;
       break;
   }
-  return next_step;
+  
+  return next_step; // the solver function is expected to return the next step
 }
