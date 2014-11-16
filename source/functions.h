@@ -11,7 +11,7 @@ int strip_off_west(int possible_steps_code);
     
 char verify(int next_step, int possible_steps[MAX_POSSIBLE_STEPS]);
 void perform(int next_step, struct Coordinate *position);
-char check(struct Coordinate *position, struct Coordinate *destination);
+char check(struct Coordinate position, struct Coordinate destination);
 
 void remove_extraneous(int *steps_pointer);
 void output_results(int steps_int);
