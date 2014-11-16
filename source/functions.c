@@ -158,10 +158,10 @@ void perform(int next_step, struct Coordinate *position) {
   }
 }
 
-char check(struct Coordinate *position, struct Coordinate *destination) {
+char check(struct Coordinate position, struct Coordinate destination) {
   char destination_reached = NOT_REACHED;
-  if (((*position).horizontal == (*destination).horizontal) &&
-    ((*position).horizontal == (*destination).horizontal)) {
+  if ((position.horizontal == destination.horizontal) &&
+    (position.vertical == destination.vertical)) {
     destination_reached = REACHED;    
   }
   return destination_reached;

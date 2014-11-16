@@ -1,5 +1,9 @@
 #include "maze.h"
 
+void my_function() {
+  // feel free to define your own functions
+}
+
 char solver(int possible_steps[MAX_POSSIBLE_STEPS],
     struct Coordinate position,
     struct Coordinate destination,
@@ -33,6 +37,8 @@ char solver(int possible_steps[MAX_POSSIBLE_STEPS],
   } else {
     // an error has occurred and possible_steps array only contains NO_MOVES
   }
+  
+  my_function(); // feel free to use your own functions
   
   // this switch is hardcoding the path for the simple maze and will fail for other mazes
   switch (int_array[0]) {

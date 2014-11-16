@@ -43,7 +43,7 @@ int main(int argument_count, char *argument_vector[]) { // http://www.astro.umd.
     step_validness = verify(next_step, possible_steps);
     if (step_validness == VALID) {
       perform(next_step, &position);
-      destination_reached = check(&position, &destination);
+      destination_reached = check(position, destination);
     }
   }
   if (step_validness == VALID) {
